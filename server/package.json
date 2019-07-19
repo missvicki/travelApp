@@ -1,0 +1,19 @@
+{
+  "name": "travelapi",
+  "version": "1.0.0",
+  "description": "a simple travel api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missvicki/travelApp.git"
+  },
+  "author": "Victor Nomwesigwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missvicki/travelApp/issues"
+  },
+  "homepage": "https://github.com/missvicki/travelApp#readme"
+}
