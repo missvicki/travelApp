@@ -1,5 +1,6 @@
-import TravelService from "../api/travel";
-class TravelController {
+"use strict";
+const TravelService = require("../api/travel");
+const TravelController = {
   fetchAllTravels(req, res) {
     const allTravels = TravelService.fetchAllTravels();
     return res
@@ -8,20 +9,20 @@ class TravelController {
         data: allTravels
       })
       .status(200);
-  }
+  },
   addATravel(req, res) {
     const newTravel = req.body;
-    const createdTravel = TravelService.addATravel(newTravel);
+    const createdTravel = TravelService.addnewTravel(newTravel);
     return res
       .json({
         status: "success",
         data: createdTravel
       })
       .status(201);
-  }
+  },
   getSingleTravel(req, res) {
     const id = req.params.id;
-    const foundTravel = TravelService.getSingleTravel(id);
+    const foundTravel = TravelService.getATravel(id);
     return res
       .json({
         status: "success",
@@ -29,6 +30,6 @@ class TravelController {
       })
       .status(200);
   }
-}
+};
 
-export default TravelController;
+module.exports = TravelController;

@@ -1,7 +1,8 @@
-import dummydata from "../utils/dummy_data";
-import Travel from "../models/travel";
+const dummydata = require("../utils/dummy_data");
+const Travel = require("../models/travel");
 
-class TravelService {
+("use strict");
+const TravelService = {
   fetchAllTravels() {
     const validdata = dummydata.travels.map(travel => {
       const newTravel = new Travel();
@@ -10,9 +11,11 @@ class TravelService {
       newTravel.cost = travel.cost;
       newTravel.bus = travel.bus;
       newTravel.date = travel.date;
+
+      return newTravel;
     });
     return validdata;
-  }
+  },
   addnewTravel(travel) {
     const travelLength = dummydata.travels.length;
     const lastid = dummydata.travels[travelLength - 1].id;
@@ -21,11 +24,11 @@ class TravelService {
     travel.id = newId;
     dummydata.travels.push(travel);
     return travel;
+  },
+  getATravel(id) {
+    const travel = dummydata.travels.find(travel => travel.id == id);
+    return travel || {};
   }
-  getATravel() {
-    const travel = dummydata.travels.find(travel => (travel.id = id));
-    return travel;
-  }
-}
+};
 
-export default TravelService;
+module.exports = TravelService;

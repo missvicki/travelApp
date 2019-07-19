@@ -1,3 +1,4 @@
+"use strict";
 class Travel {
   constructor() {
     this.id = null;
@@ -7,4 +8,4 @@ class Travel {
     this.bus = null;
   }
 }
-export default Travel;
+module.exports = Travel;
